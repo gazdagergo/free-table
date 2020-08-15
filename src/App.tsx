@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./styles.css";
-import RefactTable from "../src/Components/TableContainer";
+import FreeTable from "./FreeTable";
 
 export default function App() {
   const tableData = [
@@ -14,7 +14,7 @@ export default function App() {
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
-      <RefactTable columns={columns} data={tableData} />
+      <FreeTable columns={columns} data={tableData} />
     </div>
   );
 }
