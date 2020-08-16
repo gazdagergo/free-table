@@ -10,6 +10,7 @@ interface Context {
   TableHeadCellContainer?: any;
   TableHeadCell?: any;
   TableHead?: any;
+  columns?: string[];
 }
 
 export default Context;

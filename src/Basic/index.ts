@@ -9,3 +9,4 @@ export { default as TableHead } from "./TableHead";
 export { default as TableHeadCell } from "./TableHeadCell";
 export { default as TableHeadCellContainer } from "./TableHeadCellContainer";
 export { default as TableHeadContainer } from "./TableHeadContainer";
+export { default as TableContainer } from "./TableContainer";
