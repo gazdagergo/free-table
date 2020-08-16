@@ -1,7 +1,8 @@
 import * as React from "react";
 import "./styles.css";
-import TableWrap from "./TableWrap";
+import TableWrap from "./Basic/BasicTable";
 import * as CollectionTableComponents from "./Collection";
+import * as BasicTableComponents from "./Basic";
 
 export default function App() {
   const basicTable = {
@@ -31,7 +32,7 @@ export default function App() {
 
       <h3>Collection Table</h3>
       <TableWrap
-        {...CollectionTableComponents}
+        {...{ ...BasicTableComponents, ...CollectionTableComponents }}
         columns={collectionTable.columns}
         data={collectionTable.data}
       />
