@@ -1,5 +1,5 @@
 interface Context {
-  CellContainer?: Function;
+  CellContainer?: any;
   Table?: Function;
   Cell?: Function;
   Row?: Function;
@@ -11,6 +11,8 @@ interface Context {
   TableHeadCell?: any;
   TableHead?: any;
   columns?: string[];
+  setFilter: Function;
+  filter: { [key: string]: string };
 }
 
 export default Context;

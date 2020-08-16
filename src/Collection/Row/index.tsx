@@ -7,8 +7,8 @@ const Row: FC<Type> = ({ data }) => {
 
   return (
     <tr>
-      {data?.map(({ id, value }) => (
-        <CellContainer key={id} data={value} />
+      {data?.map(({ id, path, value }) => (
+        <CellContainer key={id} data={value} name={path} />
       ))}
     </tr>
   );
