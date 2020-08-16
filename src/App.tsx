@@ -1,20 +1,38 @@
 import * as React from "react";
 import "./styles.css";
 import FreeTable from "./FreeTable";
+import * as CollectionTableComponents from "./Collection";
 
 export default function App() {
-  const tableData = [
-    ["a", "b"],
-    ["c", "x"]
-  ];
+  const basicTable = {
+    data: [
+      ["a", "b"],
+      ["c", "x"]
+    ],
+    columns: ["6", "7"]
+  };
 
-  const columns = ["6", "7"];
+  const collectionTable = {
+    columns: [
+      { id: "c1", label: "Name", path: "name" },
+      { id: "c2", label: "Phone", path: "phone" }
+    ],
+    data: [
+      { id: "p1", name: "John Doe", phone: "1234" },
+      { id: "p2", name: "Joe Smith", phone: "5678" }
+    ]
+  };
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <FreeTable columns={columns} data={tableData} />
+      <h1>Free Table Examples</h1>
+      <h3>Basic Table</h3>
+      <FreeTable columns={basicTable.columns} data={basicTable.data} />
+      <FreeTable
+        {...CollectionTableComponents}
+        columns={collectionTable.columns}
+        data={collectionTable.data}
+      />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const TableContainer: FC<Type> = ({
   Table = BasicComponents.Table,
   ...props
 }) => (
-  <TableContext.Provider value={{ ...BasicComponents, ...props }}>
+  <TableContext.Provider value={{ ...BasicComponents, columns, ...props }}>
     <Table data={data} columns={columns} />
   </TableContext.Provider>
 );
