@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./styles.css";
-import FreeTable from "./FreeTable";
+import TableWrap from "./TableWrap";
 import * as CollectionTableComponents from "./Collection";
 
 export default function App() {
@@ -27,8 +27,10 @@ export default function App() {
     <div className="App">
       <h1>Free Table Examples</h1>
       <h3>Basic Table</h3>
-      <FreeTable columns={basicTable.columns} data={basicTable.data} />
-      <FreeTable
+      <TableWrap columns={basicTable.columns} data={basicTable.data} />
+
+      <h3>Collection Table</h3>
+      <TableWrap
         {...CollectionTableComponents}
         columns={collectionTable.columns}
         data={collectionTable.data}
