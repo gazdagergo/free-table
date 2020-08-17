@@ -2,7 +2,11 @@ import * as React from "react";
 import "./styles.css";
 import TableWrap from "./TableWrap";
 import * as CollectionTableComponents from "./Collection";
-import * as WithFilter from "./WithFilter";
+import TableBodyContainer from "./Basic/TableBodyContainer";
+import TableHeadCell from "./WithFilter/TableHeadCell";
+import withFilter from "./WithFilter/withFilter";
+import withFilterTableHeadCell from "./WithFilter/withFilterTableHeadCell";
+import * as FilterComponents from "./WithFilter";
 
 export default function App() {
   const basicTable = {
@@ -28,12 +32,13 @@ export default function App() {
     <div className="App">
       <h1>Free Table Examples</h1>
       <h3>Basic Table</h3>
-      <TableWrap columns={basicTable.columns} data={basicTable.data} />
+      {/* <TableWrap columns={basicTable.columns} data={basicTable.data} /> */}
 
       <h3>Collection Table</h3>
       <TableWrap
         {...CollectionTableComponents}
-        {...WithFilter}
+        TableHeadCell={withFilterTableHeadCell(TableHeadCell)}
+        TableBodyContainer={withFilter(TableBodyContainer)}
         columns={collectionTable.columns}
         data={collectionTable.data}
       />
