@@ -7,11 +7,11 @@ const TableBody: FC<Type> = ({ data }) => {
   const { RowContainer } = useContext(TableContext);
 
   return (
-    <>
+    <tbody>
       {data?.map((rowData) => (
         <RowContainer data={rowData} />
       ))}
-    </>
+    </tbody>
   );
 };
 

@@ -1,22 +1,12 @@
 import React, { FC, useContext } from "react";
 import TableContext from "../../TableContext";
 import Type from "../../types/TableBodyContainer";
-import get from "lodash/get";
+import withFilter from "../withFilter";
 
 const TableBodyContainer: FC<Type> = ({ data }) => {
-  const { TableBody, filter } = useContext(TableContext);
+  const { TableBody } = useContext(TableContext);
 
-  console.log(filter, data);
-
-  const filteredData = data.filter((record) =>
-    Object.entries(filter).reduce(
-      (acc, [path, value]) =>
-        get(record, path)?.toUpperCase().includes(value.toUpperCase()) && acc,
-      true
-    )
-  );
-
-  return <TableBody data={filteredData} />;
+  return <TableBody data={data} />;
 };
 
-export default TableBodyContainer;
+export default withFilter(TableBodyContainer);

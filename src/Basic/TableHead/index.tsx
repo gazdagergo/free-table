@@ -6,11 +6,11 @@ const TableHead: FC<Type> = ({ columns }) => {
   const { TableHeadCellContainer } = useContext(TableContext);
 
   return (
-    <>
+    <thead>
       {columns?.map((column) => (
         <TableHeadCellContainer data={column} />
       ))}
-    </>
+    </thead>
   );
 };
 
