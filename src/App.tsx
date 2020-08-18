@@ -1,20 +1,10 @@
 import * as React from "react";
 import "./styles.css";
 import TableWrap from "./TableWrap";
-import * as CollectionTableComponents from "./Collection";
-import TableHeadCell from "./WithFilter/TableHeadCell";
-import withFilter from "./WithFilter/withFilter";
-import * as FilterComponents from "./WithFilter";
+import * as TableComponents from "./Components";
+import withFilter from "./WithFilter";
 
 export default function App() {
-  const basicTable = {
-    data: [
-      ["a", "b"],
-      ["c", "x"]
-    ],
-    columns: ["6", "7"]
-  };
-
   const collectionTable = {
     columns: [
       { id: "c1", label: "Name", path: "name" },
@@ -29,14 +19,11 @@ export default function App() {
   return (
     <div className="App">
       <h1>Free Table Examples</h1>
-      <h3>Basic Table</h3>
-      {/* <TableWrap columns={basicTable.columns} data={basicTable.data} /> */}
 
       <h3>Collection Table</h3>
       <TableWrap
         {...withFilter({
-          ...CollectionTableComponents,
-          TableHeadCell: FilterComponents.TableHeadCell
+          ...TableComponents
         })}
         columns={collectionTable.columns}
         data={collectionTable.data}
