@@ -2,7 +2,7 @@ import * as React from "react";
 import "./styles.css";
 import TableWrap from "./TableWrap";
 import * as TableComponents from "./Components";
-import withFilter from "./WithFilter";
+import withFilter from "./Hox/withFilter";
 
 export default function App() {
   const collectionTable = {
