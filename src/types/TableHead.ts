@@ -1,5 +1,7 @@
+import Column from "./Column";
+
 interface TableHead {
-  columns: string[];
+  columns: Column[];
 }
 
 export default TableHead;

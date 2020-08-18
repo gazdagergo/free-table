@@ -1,5 +1,5 @@
-interface TableHeadContainer {
-  columns: string[];
-}
+/* eslint-disable no-undef */
+
+interface TableHeadContainer {}
 
 export default TableHeadContainer;

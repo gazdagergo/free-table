@@ -1,12 +1,13 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import Type from "../../types/Table";
-import TableHeadContainer from "../TableHeadContainer";
-import TableBodyContainer from "../TableBodyContainer";
+import TableContext from "../../TableContext";
 
-const Table: FC<Type> = ({ data, columns }) => {
+const Table: FC<Type> = ({ data }) => {
+  const { TableHeadContainer, TableBodyContainer } = useContext(TableContext);
+
   return (
     <table>
-      <TableHeadContainer columns={columns} />
+      <TableHeadContainer />
       <TableBodyContainer data={data} />
     </table>
   );

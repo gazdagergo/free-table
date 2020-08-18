@@ -1,14 +1,17 @@
-import React, { FC } from "react";
-import RowContainer from "../RowContainer";
+import React, { FC, useContext } from "react";
+import TableContext from "../../TableContext";
+
 import Type from "../../types/TableBody";
 
 const TableBody: FC<Type> = ({ data }) => {
+  const { RowContainer } = useContext(TableContext);
+
   return (
-    <>
-      {data?.map((rowData) => (
-        <RowContainer data={rowData} />
-      ))}
-    </>
+    <tbody>
+      {data?.map((rowData) => {
+        return <RowContainer key={rowData.id} data={rowData} />;
+      })}
+    </tbody>
   );
 };
 

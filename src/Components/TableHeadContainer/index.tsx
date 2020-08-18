@@ -1,9 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import TableContext from "../../TableContext";
 import Type from "../../types/TableHeadContainer";
-import TableHead from "../TableHead";
 
-const TableHeadContainer: FC<Type> = ({ columns }) => {
-  return <TableHead columns={columns} />;
+const TableHeadContainer: FC<Type> = () => {
+  const { TableHead, columns } = useContext(TableContext);
+  const headData = columns?.map(({ id, label, dataPath }) => ({ id, label, dataPath }));
+  return <TableHead columns={headData} />;
 };
 
 export default TableHeadContainer;

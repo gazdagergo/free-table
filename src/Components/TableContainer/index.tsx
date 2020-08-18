@@ -1,13 +1,10 @@
-import React, { FC } from "react";
-import Table from "../Table";
-import Type from "../../types/Table";
-import TableContext from "../TableContext";
-import Cell from "../Cell";
+import React, { FC, useContext } from "react";
+import Type from "../../types/TableContainer";
+import TableContext from "../../TableContext";
 
-const TableContainer: FC<Type> = ({ data, columns }) => (
-  <TableContext.Provider value={{ Cell }}>
-    <Table data={data} columns={columns} />
-  </TableContext.Provider>
-);
+const TableContainer: FC<Type> = ({ data }) => {
+  const { Table } = useContext(TableContext);
+  return <Table data={data} />;
+};
 
 export default TableContainer;

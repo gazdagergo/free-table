@@ -1,6 +1,6 @@
 type Column = {
   id: string | number;
-  path: string;
+  dataPath: string;
   label: string;
 };
 
