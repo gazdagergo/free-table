@@ -7,8 +7,8 @@ const Row: FC<Type> = ({ data }) => {
 
   return (
     <tr>
-      {data?.map(({ id, dataPath, value }) => {
-        return <CellContainer key={id} data={value} name={dataPath} />;
+      {data?.map(({ id, accessor, value }) => {
+        return <CellContainer key={id} data={value} name={accessor} />;
       })}
     </tr>
   );

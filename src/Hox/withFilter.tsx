@@ -1,32 +1,28 @@
 import React from "react";
-import get from "lodash/get";
 import TableContext from "../TableContext";
-import Record from '../types/Record'
 import Context from "../types/Context";
 import InputChangeHanlder from "../types/InputChangeHanlder";
-import Filter from "../types/Filter";
 import Hoc from "../types/Hoc";
+import getFilteredData from "../Functions/getFilteredData"
 
-const getFilteredData = (filter: Filter | {}, data: Record[]) =>
-  data.filter((record) =>
-    Object.entries(filter).reduce(
-      (acc, [dataPath, value]) =>
-        get(record, dataPath)?.toUpperCase().includes(value.toUpperCase()) && acc,
-      true
-    )
-  );
+type HocGroup = (options?: { getFilteredData?: Function }) => (context: Context) => Context
 
-type HocGroup = (context: Context) => Context
+type FilterRenderFn = (value: Context) => React.ReactNode
 
-const withFilter:HocGroup = ({ TableBodyContainer, TableHeadCell, ...rest }) => {
-  const TableBodyContainerWithFilter:Hoc = (props) => (
-    <TableContext.Consumer>
-      {({ filter = {} }): { filter?: Filter | {}, [key: string]: any } => {
-        const filteredData = getFilteredData(filter, props.data);
-        return <TableBodyContainer {...props} data={filteredData} />;
-      }}
-    </TableContext.Consumer>
-  );
+const withFilter:HocGroup = (options = { getFilteredData }) => ({ TableBodyContainer, TableHeadCell, ...rest }) => {
+  const TableBodyContainerWithFilter:Hoc = (props) => {
+
+    const filterRenderFn:FilterRenderFn = ({ filter = {}, columns }) => {
+      const filteredData = options.getFilteredData?.(filter, props.data, columns);
+      return <TableBodyContainer {...props} data={filteredData} />;
+    }
+
+    return (
+      <TableContext.Consumer>
+        {filterRenderFn}
+      </TableContext.Consumer>
+    );
+  }
 
   const TableHeadCellWithFilter:Hoc = (props) => (
     <TableContext.Consumer>

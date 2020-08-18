@@ -6,10 +6,10 @@ import Type from "../../types/RowContainer";
 
 const RowContainer: FC<Type> = ({ data }) => {
   const { Row, columns } = useContext(TableContext);
-  const rowData = columns?.map(({ id, dataPath }) => ({
+  const rowData = columns?.map(({ id, accessor }) => ({
     id,
-    dataPath,
-    value: get(data, dataPath)
+    accessor,
+    value: get(data, accessor)
   }));
   return <Row data={rowData} />;
 };

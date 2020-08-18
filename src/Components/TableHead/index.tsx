@@ -8,8 +8,8 @@ const TableHead: FC<Type> = ({ columns }) => {
   return (
     <thead>
       <tr>
-        {columns?.map(({ id, label, dataPath }) => (
-          <TableHeadCellContainer key={id} data={label} name={dataPath} />
+        {columns?.map(({ id, label, accessor }) => (
+          <TableHeadCellContainer key={id} data={label} name={accessor} />
         ))}
       </tr>
     </thead>
