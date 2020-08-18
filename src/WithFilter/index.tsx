@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React from "react";
 import get from "lodash/get";
 import TableContext from "../TableContext";
 
 const getFilteredData = (filter, data) =>
   data.filter((record) =>
     Object.entries(filter).reduce(
-      (acc, [path, value]) =>
-        get(record, path)?.toUpperCase().includes(value.toUpperCase()) && acc,
+      (acc, [dataPath, value]) =>
+        get(record, dataPath)?.toUpperCase().includes(value.toUpperCase()) && acc,
       true
     )
   );

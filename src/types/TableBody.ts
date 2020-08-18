@@ -1,5 +1,7 @@
+import Record from "./Record";
+
 interface TableBody {
-  data: string[][];
+  data: Record[];
 }
 
 export default TableBody;

@@ -7,8 +7,8 @@ import withFilter from "./Hox/withFilter";
 export default function App() {
   const collectionTable = {
     columns: [
-      { id: "c1", label: "Name", path: "name" },
-      { id: "c2", label: "Phone", path: "phone" }
+      { id: "c1", label: "Name", dataPath: "name" },
+      { id: "c2", label: "Phone", dataPath: "phone" }
     ],
     data: [
       { id: "p1", name: "John Doe", phone: "1234" },
