@@ -1,18 +1,22 @@
+import Column from "./Column";
+import Filter from "./Filter";
+
 interface Context {
-  CellContainer?: any;
-  Table?: Function;
-  Cell?: Function;
-  Row?: Function;
-  TableHeadContainer?: Function;
-  TableBodyContainer?: Function;
+  CellContainer?: any; // TODO: find the proper type
+  Table?: any;
+  Cell?: any;
+  Row?: any;
+  TableHeadContainer?: any;
+  TableBodyContainer?: any;
   RowContainer?: any;
   TableBody?: any;
+  TableContainer?: any;
   TableHeadCellContainer?: any;
   TableHeadCell?: any;
   TableHead?: any;
-  columns?: string[];
-  setFilter: Function;
-  filter: { [key: string]: string };
+  columns?: Column[];
+  setFilter?: Function;
+  filter?: Filter;
 }
 
 export default Context;

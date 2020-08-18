@@ -1,5 +1,8 @@
+import Record from "./Record";
+
 interface TableBodyContainer {
-  data: string[][];
+  data: Record[];
+  [key: string]: any;
 }
 
 export default TableBodyContainer;

@@ -1,5 +1,7 @@
+import Record from "./Record";
+
 interface Row {
-  data: string[];
+  data: Record[];
 }
 
 export default Row;

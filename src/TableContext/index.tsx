@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import Context from "../types/Context";
-import * as BasicComponents from "../Basic";
+import * as CollectionComponents from "../Components";
 
-export const TableContext = createContext<Context>(BasicComponents);
+export const TableContext = createContext<Context>(CollectionComponents);
 
 export default TableContext;
