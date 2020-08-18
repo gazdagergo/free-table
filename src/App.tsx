@@ -2,10 +2,8 @@ import * as React from "react";
 import "./styles.css";
 import TableWrap from "./TableWrap";
 import * as CollectionTableComponents from "./Collection";
-import TableBodyContainer from "./Basic/TableBodyContainer";
 import TableHeadCell from "./WithFilter/TableHeadCell";
 import withFilter from "./WithFilter/withFilter";
-import withFilterTableHeadCell from "./WithFilter/withFilterTableHeadCell";
 import * as FilterComponents from "./WithFilter";
 
 export default function App() {
@@ -36,9 +34,10 @@ export default function App() {
 
       <h3>Collection Table</h3>
       <TableWrap
-        {...CollectionTableComponents}
-        TableHeadCell={withFilterTableHeadCell(TableHeadCell)}
-        TableBodyContainer={withFilter(TableBodyContainer)}
+        {...withFilter({
+          ...CollectionTableComponents,
+          TableHeadCell: FilterComponents.TableHeadCell
+        })}
         columns={collectionTable.columns}
         data={collectionTable.data}
       />
