@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./styles.css";
-import TableWrap from "./TableWrap";
 import withFilter from "./Hox/applyFilter";
+import FreeTable from "./FreeTable";
 
 export default function App() {
   const collectionTable = {
@@ -19,8 +19,9 @@ export default function App() {
     <div className="App">
       <h1>Free Table Examples</h1>
 
+
       <h3>Collection Table</h3>
-      <TableWrap
+      <FreeTable
         {...withFilter()()}
         columns={collectionTable.columns}
         data={collectionTable.data}

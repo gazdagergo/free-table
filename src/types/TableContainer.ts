@@ -1,9 +1,7 @@
-import Column from "./Column";
-import Record from "./Record";
+import Context from "./Context";
 
 interface TableContainer {
-  data?: Record[];
-  columns?: Column[];
+  context: Context
 }
 
-export default TableContainer;
+export default TableContainer
