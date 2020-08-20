@@ -1,3 +1,3 @@
-type Hoc = (props: { [key: string]: any }) => React.ReactChild
+type HOC = (options: { [key: string]: any }) => (base:any) => (props: { [key: string]: any }) => React.ReactChild
 
-export default Hoc
+export default HOC

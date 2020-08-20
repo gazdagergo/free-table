@@ -1,5 +1,5 @@
 import React from 'react'
-import HOC from "../types/HOC2";
+import HOC from "../types/HOC";
 import Context from "../types/Context";
 import TableContext from "../TableContext";
 

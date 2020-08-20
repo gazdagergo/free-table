@@ -1,5 +1,5 @@
 import React from 'react'
-import HOC from "../types/HOC2";
+import HOC from "../types/HOC";
 
 const withInput:HOC = () => Base => (props) => {
   return (
