@@ -1,12 +1,12 @@
-import Context from "../types/Context";
+import HocGroup from "../types/HocGroup";
 import getFilteredData from "../Functions/getFilteredData"
 import withInput from './withInput'
 import withDataFilter from './withDataFilter'
 import withFilterInputHandling from './withFilterInputHandling'
+import * as TableComponents from "../Components";
 
-type HocGroup = (options?: { getFilteredData?: Function }) => (context: Context) => Context
-
-const withFilter:HocGroup = (options = { getFilteredData }) => ({ TableBodyContainer, TableHeadCell, TableHeadCellContainer, ...rest }) => {
+const applyFilter:HocGroup = (options = { getFilteredData }) => (Components = TableComponents) => {
+  const { TableBodyContainer, TableHeadCell, TableHeadCellContainer, ...rest } = Components
 
   const TableBodyContainerWithFilter = withDataFilter({ getFilteredData })(TableBodyContainer)
   const TableHeadCellWithFilter = withInput({})(TableHeadCell)
@@ -20,4 +20,4 @@ const withFilter:HocGroup = (options = { getFilteredData }) => ({ TableBodyConta
   };
 };
 
-export default withFilter;
+export default applyFilter;

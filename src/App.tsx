@@ -1,8 +1,7 @@
 import * as React from "react";
 import "./styles.css";
 import TableWrap from "./TableWrap";
-import * as TableComponents from "./Components";
-import withFilter from "./Hox/withFilter";
+import withFilter from "./Hox/applyFilter";
 
 export default function App() {
   const collectionTable = {
@@ -22,9 +21,7 @@ export default function App() {
 
       <h3>Collection Table</h3>
       <TableWrap
-        {...withFilter()({
-          ...TableComponents
-        })}
+        {...withFilter()()}
         columns={collectionTable.columns}
         data={collectionTable.data}
       />
