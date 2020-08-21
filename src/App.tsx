@@ -39,17 +39,18 @@ export default function App() {
       <h1>Free Table Examples</h1>
 
       <h3>Table with filter</h3>
-      <FreeTable
+     <FreeTable
         {...applyFilter()()}
         columns={filterExampleData.columns}
         data={filterExampleData.data}
       />
 
-      <h3>Table with group</h3>
+      <h3>Table with group and filter</h3>
       <FreeTable
-        {...applyFilter()(
-          applyGroups({ groups: groupExampleData.groups })()
-        )}
+        options={[
+          applyGroups({ groups: groupExampleData.groups }),
+          applyFilter(),
+        ]}
         columns={groupExampleData.columns}
         data={groupExampleData.data}
         

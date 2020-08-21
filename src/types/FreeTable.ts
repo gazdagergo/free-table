@@ -15,7 +15,8 @@ interface FreeTable {
   TableBodyContainerCell?: any;
   TableHeadCell?: any;
   TableHeadCellContainerCell?: any;
-  TableHeadContainerCell?: any;  
+  TableHeadContainerCell?: any; 
+  options?: any[];
 }
 
 export default FreeTable;
