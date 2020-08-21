@@ -11,7 +11,7 @@ const FreeTable:FC<Type> = ({
 
   let nextProps:Context = {}
   if (options) {
-    nextProps = options.reduce((acc, decorator) => {
+    nextProps = options.reverse().reduce((acc, decorator) => {
       return decorator(acc)
     }, contextDefaults)
   }

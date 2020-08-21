@@ -48,8 +48,8 @@ export default function App() {
       <h3>Table with group and filter</h3>
       <FreeTable
         options={[
-          applyGroups({ groups: groupExampleData.groups }),
           applyFilter(),
+          applyGroups({ groups: groupExampleData.groups }),
         ]}
         columns={groupExampleData.columns}
         data={groupExampleData.data}
