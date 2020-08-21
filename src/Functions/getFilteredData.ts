@@ -10,7 +10,7 @@ const stringIncludes:StringIncludes = (text, find) => text?.toUpperCase?.().incl
 export default (filter: Filter | {}, data: Record[], columns: Column[]) =>
   data.filter((record) =>
     Object.entries(filter).reduce(
-      (acc, [accessor, value]) => stringIncludes(get(record, accessor), value) && acc,
+      (acc, [accessor, value]) => stringIncludes(get(record, accessor) || get(record, 'label'), value) && acc,
       true
     )
   );
