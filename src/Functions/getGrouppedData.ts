@@ -42,5 +42,5 @@ export type GroupObj = {
       return acc
     }, groupObj)
 
-    return groupObj
+    return Object.values(groupObj)
   }

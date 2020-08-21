@@ -4,9 +4,9 @@ import withInput from './withInput'
 import withDataFilter from './withDataFilter'
 import withFilterInputHandling from './withFilterInputHandling'
 import withFilterState from './withFilterState'
-import * as TableComponents from "../Components";
+import { contextDefaults } from "../TableContext";
 
-const applyFilter:HocGroup = (options = { getFilteredData }) => (Components = TableComponents) => {
+const applyFilter:HocGroup = (options = { getFilteredData }) => (Components = contextDefaults) => {
   const {
     TableContainer,
     TableBodyContainer,

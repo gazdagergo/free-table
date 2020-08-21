@@ -1,8 +1,7 @@
 import React, { FC, useContext } from "react";
 import get from "lodash/get";
-import TableContext from "../../TableContext";
-
-import Type from "../../types/RowContainer";
+import Type from "../types/RowContainer";
+import TableContext from ".";
 
 const RowContainer: FC<Type> = ({ data, ...props }) => {
   const { Row, columns } = useContext(TableContext);

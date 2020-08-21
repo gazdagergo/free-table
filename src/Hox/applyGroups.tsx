@@ -1,39 +1,36 @@
 import React, { useContext } from 'react'
 import HocGroup from "../types/HocGroup";
-import getGrouppedDataDefault, { GroupObj } from "../Functions/getGrouppedData"
+import getGrouppedDataDefault from "../Functions/getGrouppedData"
 import withGroupData from "./withGroupData"
-import * as TableComponents from "../Components";
-import TableContext from '../TableContext';
+import TableContext, { contextDefaults } from '../TableContext';
+import RowMap from '../types/RowMap';
+import Record from '../types/Record';
 
-const TableBodyGroupRender = ({ data }: { data: GroupObj }) => {
+const rowMapWithGroups:(F?: Function) => RowMap = (prevRowMap) => arr => {
   const { RowContainer } = useContext(TableContext);
-
-  return (
-    <tbody>
-      {Object.values(data)?.map(({ label, items }) => (
-        <>
-          <tr><td>{label}</td></tr>
-          {items.map(rowData => {
-            return <RowContainer key={rowData.id} data={rowData} />;
-          })}
-        </>
+  return arr.map(({ label, items }) => (
+    <>
+      <tr><td>{label}</td></tr>
+      {prevRowMap?.(items, (rowData:Record) => (
+        <RowContainer key={rowData.id} data={rowData} />
       ))}
-    </tbody>
-  );
-};
+    </>
+  ))
+}
 
-const applyGroups:HocGroup = (options = {}) => (Components = TableComponents) => {
+const applyGroups:HocGroup = (options = {}) => (Components = contextDefaults) => {
   const { groups, getGrouppedData = getGrouppedDataDefault } = options
 
   const {
     TableBodyContainer,
     TableBody,
+    rowMap: prevRowMap,
     ...rest
   } = Components
 
   return {
     TableBodyContainer: withGroupData({ groups, getGrouppedData })(TableBodyContainer),
-    TableBody: TableBodyGroupRender,
+    rowMap: rowMapWithGroups(prevRowMap),
     ...rest
   };
 };
