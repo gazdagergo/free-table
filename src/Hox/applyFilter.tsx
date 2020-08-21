@@ -15,15 +15,15 @@ const applyFilter:HocGroup = (options = { getFilteredData }) => (Components = Ta
     ...rest
   } = Components
 
-  const TableBodyContainerWithFilter = withDataFilter({ getFilteredData })(TableBodyContainer)
+  const TableBodyContainerWithDataFilter = withDataFilter({ getFilteredData })(TableBodyContainer)
   const TableHeadCellWithFilter = withInput({})(TableHeadCell)
-  const TableHeadCellContainerWithFilter = withFilterInputHandling({})(TableHeadCellContainer)
+  const TableHeadCellContainerWithFilterInputHandling = withFilterInputHandling({})(TableHeadCellContainer)
   const TableContainerWithFilterState = withFilterState({})(TableContainer)
 
   return {
-    TableBodyContainer: TableBodyContainerWithFilter,
+    TableBodyContainer: TableBodyContainerWithDataFilter,
     TableHeadCell: TableHeadCellWithFilter,
-    TableHeadCellContainer: TableHeadCellContainerWithFilter,
+    TableHeadCellContainer: TableHeadCellContainerWithFilterInputHandling,
     TableContainer: TableContainerWithFilterState,
     ...rest
   };
