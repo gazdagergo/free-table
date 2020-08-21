@@ -17,6 +17,7 @@ interface Context {
   columns?: Column[];
   setFilter?: Function;
   filter?: Filter;
+  rowMap?: Function;
 }
 
 export default Context;

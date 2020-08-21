@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
-import Type from "../../types/Row";
-import TableContext from "../../TableContext";
+import Type from "../types/Row";
+import TableContext from ".";
 
 const Row: FC<Type> = ({ data }) => {
   const { CellContainer } = useContext(TableContext);

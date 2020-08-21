@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
-import TableContext from "../../TableContext";
-import Type from "../../types/TableHeadCellContainer";
+import Type from "../types/TableHeadCellContainer";
+import TableContext from ".";
 
 const TableHeadCellContainer: FC<Type> = ({ data, name, ...props }) => {
   const { TableHeadCell } = useContext(TableContext);

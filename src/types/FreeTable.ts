@@ -1,7 +1,7 @@
 import Column from "./Column";
 import Record from "./Record";
 
-interface TableContainer {
+interface FreeTable {
   data?: Record[];
   columns?: Column[];
   Cell?: any;
@@ -18,4 +18,4 @@ interface TableContainer {
   TableHeadContainerCell?: any;  
 }
 
-export default TableContainer;
+export default FreeTable;
