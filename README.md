@@ -1,14 +1,10 @@
 # Free Table
 
-Fully customisable react table with tons of out-of-the-box features like
-- filter
-- sort
-
-Moreover you can easily create your own features on top of the existing ones.
+Fully customisable react table with the ablity to implement your own data manipulation or ui-representation features.
 
 ## Installation
 
-`> yarn add free-table`
+`$ yarn add free-table`
 
 ## Usage
 
@@ -28,12 +24,30 @@ const columns = [
   { id: 'c2', accessor: 'phone', label: 'Phone' },
 ]
 
-export default function App() {
-  return (
-    <FreeTable data={data} columns={columns} />
-  );
-}
+export default () => (
+  <FreeTable
+    data={data}
+    columns={columns}
+  />
+);
 ```
 
+## Features
+
+To use features like 'filter' pass the built-in or your custom function to the options prop:
+
+```
+import { applyFilter }, FreeTable from 'free-table'
+
+...
+
+  <FreeTable
+    data={data}
+    columns={cols}
+    options={[
+      applyFilter()
+    ]}
+  />
+```
 
 
