@@ -1,9 +1,13 @@
 {
   "name": "free-table",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "",
-  "keywords": [],
+  "keywords": ["react", "table", "free-table", "react-table", "datatable"],
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gazdagergo/free-table.git"
+  },
   "types": "lib",
   "dependencies": {
     "@types/lodash": "^4.14.159",
@@ -19,7 +23,7 @@
     "typescript": "3.7.5"
   },
   "scripts": {
-    "prepack": "tsc -p ."
+    "build": "tsc -p ."
   },
   "browserslist": [
     ">0.2%",

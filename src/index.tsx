@@ -1,7 +1,8 @@
-import * as React from "react";
-import { render } from "react-dom";
+import FreeTable from './FreeTable';
+export default FreeTable;
 
-import App from "./App";
-
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+export { default as getFilteredData } from './Functions/getFilteredData';
+export { default as getGrouppedData } from './Functions/getGrouppedData';
+export { default as applyFilter } from './Hox/applyFilter';
+export { default as applyGroups } from './Hox/applyGroups';
+export * from './TableContext';
