@@ -1,23 +1,21 @@
 {
   "name": "free-table",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "keywords": [],
   "main": "lib/index.js",
   "types": "lib",
   "dependencies": {
     "@types/lodash": "^4.14.159",
-    "@types/react": "16.9.46",
-    "@types/react-dom": "16.9.8",
     "@types/styled-components": "^5.1.2",
     "lodash": "^4.17.20",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@types/react": "16.9.46",
     "@types/react-dom": "16.9.8",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "typescript": "3.7.5"
   },
   "scripts": {
