@@ -1,9 +1,10 @@
 {
-  "name": "react-free-table",
-  "version": "1.0.0",
+  "name": "free-table",
+  "version": "0.1.1",
   "description": "",
   "keywords": [],
-  "main": "src/index.tsx",
+  "main": "lib/index.js",
+  "types": "lib",
   "dependencies": {
     "@types/lodash": "^4.14.159",
     "@types/react": "16.9.46",
@@ -12,7 +13,6 @@
     "lodash": "^4.17.20",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.4.3",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -21,10 +21,7 @@
     "typescript": "3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "prepack": "tsc -p ."
   },
   "browserslist": [
     ">0.2%",
