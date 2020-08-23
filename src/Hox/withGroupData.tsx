@@ -5,10 +5,10 @@ import TableContext from "../TableContext";
 
 type RenderFunction = (value: Context) => React.ReactNode
 
-const withGrouppedData:HOC = ({ groups, getGrouppedData }) => Base => (props) => {
+const withGrouppedData:HOC = ({ groups, groupData }) => Base => (props) => {
 
   const renderFunction:RenderFunction = () => {
-    return <Base {...props} data={getGrouppedData(props.data, groups)} />;
+    return <Base {...props} data={groupData(props.data, groups)} />;
   }
 
   return (

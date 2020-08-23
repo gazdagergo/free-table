@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import HocGroup from "../types/HocGroup";
-import getGrouppedDataDefault from "../Functions/getGrouppedData"
+import groupDataDefault from "../Functions/groupData"
 import styled from 'styled-components'
 import withGroupData from "./withGroupData"
 import TableContext, { contextDefaults } from '../TableContext';
@@ -16,7 +16,7 @@ const rowMapWithGroups:(F?: Function) => RowMap = (prevRowMap) => arr => {
   const { RowContainer } = useContext(TableContext);
   return arr.map(({ label, items }) => (
     <>
-      {!!items.length && <tr><Td colSpan={2}>{label}</Td></tr>}
+      {!!items.length && <tr><Td colSpan={Object.keys(items[0]).length}>{label}</Td></tr>}
       {prevRowMap?.(items, (rowData:Record) => (
         <RowContainer key={rowData.id} data={rowData} />
       ))}
@@ -25,7 +25,7 @@ const rowMapWithGroups:(F?: Function) => RowMap = (prevRowMap) => arr => {
 }
 
 const applyGroups:HocGroup = (options = {}) => (Components = contextDefaults) => {
-  const { groups, getGrouppedData = getGrouppedDataDefault } = options
+  const { groups, groupData = groupDataDefault } = options
 
   const {
     TableBodyContainer,
@@ -35,7 +35,7 @@ const applyGroups:HocGroup = (options = {}) => (Components = contextDefaults) =>
   } = Components
 
   return {
-    TableBodyContainer: withGroupData({ groups, getGrouppedData })(TableBodyContainer),
+    TableBodyContainer: withGroupData({ groups, groupData })(TableBodyContainer),
     rowMap: rowMapWithGroups(prevRowMap),
     ...rest
   };
