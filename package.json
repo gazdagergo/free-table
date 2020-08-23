@@ -2,7 +2,13 @@
   "name": "free-table",
   "version": "0.1.8",
   "description": "",
-  "keywords": ["react", "table", "free-table", "react-table", "datatable"],
+  "keywords": [
+    "react",
+    "table",
+    "free-table",
+    "react-table",
+    "datatable"
+  ],
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -23,7 +29,8 @@
     "typescript": "3.7.5"
   },
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "bootstrap": "npm run build && rm -rf examples/node_modules/free-table/lib/ && cp -R lib/ examples/node_modules/free-table/lib"
   },
   "browserslist": [
     ">0.2%",
