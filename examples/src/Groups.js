@@ -4,11 +4,11 @@ import FreeTable, { applyGroups } from "free-table";
 
 export default () => {
   const data = [
-    { id: "1", name: "John Doe", phone: "1234", city: "Stockholm" },
-    { id: "2", name: "Alex Smith", phone: "5678", city: "Stockholm" },
-    { id: "3", name: "Anna Fox", phone: "91011", city: "Berlin" },
-    { id: "4", name: "Ellen Wood", phone: "1314", city: "Stockholm" },
-    { id: "5", name: "Guy Richie", phone: "1516", city: "Berlin" },
+    { id: "u1", name: "John Doe", phone: "1234", city: "Stockholm" },
+    { id: "u2", name: "Alex Smith", phone: "5678", city: "Stockholm" },
+    { id: "u3", name: "Anna Fox", phone: "91011", city: "Berlin" },
+    { id: "u4", name: "Ellen Wood", phone: "1314", city: "Stockholm" },
+    { id: "u5", name: "Guy Richie", phone: "1516", city: "Berlin" },
   ];
 
 
@@ -20,7 +20,7 @@ export default () => {
 
   const groups = [
     { id: "g1", label: "Users from Stockholm", city: "Stockholm" },
-    { id: "g1", label: "Users from Berlin", city: "Berlin" },
+    { id: "g2", label: "Users from Berlin", city: "Berlin" },
   ]
 
   return (

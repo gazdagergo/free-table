@@ -4,8 +4,8 @@ import FreeTable from "free-table";
 
 export default () => {
   const data = [
-    { id: "1", name: "John Doe", phone: "1234" },
-    { id: "2", name: "Alex Smith", phone: "5678" }
+    { id: "u1", name: "John Doe", phone: "1234" },
+    { id: "u2", name: "Alex Smith", phone: "5678" }
   ];
 
   const columns = [

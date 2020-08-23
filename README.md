@@ -63,7 +63,8 @@ import { applyFilter }, FreeTable from 'free-table'
 
 ### applyGroups({ groups, groupData? })
 
-It is not equivalent to the common `groupBy` behaviours. All the data rows been rendered but been groupped by a certain criteria. The default groupping feature enables you to group by string match with a certaion record field. In the below example it is the `city`.
+It is not equivalent to the common `groupBy` behaviours. All the data rows been rendered but been groupped by a certain criteria. In the below example it is the `city`.
+You can pass custom groupping function via the optional `groupData` property. By default it groups by string matching with a certain field (city) as defined in `groups`.
 
 ```jsx
 import React from "react";

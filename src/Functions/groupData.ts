@@ -26,7 +26,7 @@ export type GroupObj = {
     const value = Object.entries(rest)[0][1]
     
     return {
-      ...acc, [value]: { id, key, label, items: [] }
+      ...acc, [value]: { id, label, items: [] }
     }}, {})
 
     data.reduce((acc, record) => {

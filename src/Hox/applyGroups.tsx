@@ -14,9 +14,9 @@ const Td = styled.td`
 
 const rowMapWithGroups:(F?: Function) => RowMap = (prevRowMap) => arr => {
   const { RowContainer } = useContext(TableContext);
-  return arr.map(({ label, items }) => (
+  return arr.map(({ id, label, items }) => (
     <>
-      {!!items.length && <tr><Td colSpan={Object.keys(items[0]).length}>{label}</Td></tr>}
+      {!!items.length && <tr key={id}><Td colSpan={Object.keys(items[0]).length}>{label}</Td></tr>}
       {prevRowMap?.(items, (rowData:Record) => (
         <RowContainer key={rowData.id} data={rowData} />
       ))}
@@ -29,7 +29,6 @@ const applyGroups:HocGroup = (options = {}) => (Components = contextDefaults) =>
 
   const {
     TableBodyContainer,
-    TableBody,
     rowMap: prevRowMap,
     ...rest
   } = Components
