@@ -1,41 +1,21 @@
-import React, { useContext } from 'react'
 import HocGroup from "../types/HocGroup";
 import groupDataDefault from "../Functions/groupData"
-import styled from 'styled-components'
 import withGroupData from "./withGroupData"
-import TableContext, { contextDefaults } from '../TableContext';
-import RowMap from '../types/RowMap';
-import Record from '../types/Record';
-
-const Td = styled.td`
-  background: lightgray;
-  text-align: left;
-`
-
-const rowMapWithGroups:(F?: Function) => RowMap = (prevRowMap) => arr => {
-  const { RowContainer } = useContext(TableContext);
-  return arr.map(({ id, label, items }) => (
-    <>
-      {!!items.length && <tr key={id}><Td colSpan={Object.keys(items[0]).length}>{label}</Td></tr>}
-      {prevRowMap?.(items, (rowData:Record) => (
-        <RowContainer key={rowData.id} data={rowData} />
-      ))}
-    </>
-  ))
-}
+import withGroupMap from "./withGroupMap"
+import { contextDefaults } from '../TableContext';
 
 const applyGroups:HocGroup = (options = {}) => (Components = contextDefaults) => {
   const { groups, groupData = groupDataDefault } = options
 
   const {
     TableBodyContainer,
-    rowMap: prevRowMap,
+    RowMap,
     ...rest
   } = Components
 
   return {
     TableBodyContainer: withGroupData({ groups, groupData })(TableBodyContainer),
-    rowMap: rowMapWithGroups(prevRowMap),
+    RowMap: withGroupMap({})(RowMap),
     ...rest
   };
 };
