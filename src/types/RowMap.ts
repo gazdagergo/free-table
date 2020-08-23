@@ -1,3 +1,5 @@
-type RowMap = (arr: any[], callback: Function) => any[]
+interface RowMap {
+  data?: any;
+}
 
-export default RowMap
+export default RowMap;

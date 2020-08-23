@@ -9,6 +9,7 @@ interface Context {
   TableHeadContainer?: any;
   TableBodyContainer?: any;
   RowContainer?: any;
+  RowMap?: any;
   TableBody?: any;
   TableContainer?: any;
   TableHeadCellContainer?: any;
@@ -17,7 +18,6 @@ interface Context {
   columns?: Column[];
   setFilter?: Function;
   filter?: Filter;
-  rowMap?: Function;
 }
 
 export default Context;

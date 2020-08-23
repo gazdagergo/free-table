@@ -6,13 +6,13 @@ import Row from "./Row";
 import RowContainer from "./RowContainer";
 import Table from "./Table";
 import TableContainer from "./TableContainer";
+import RowMap from "./RowMap";
 import TableBody from "./TableBody";
 import TableBodyContainer from "./TableBodyContainer";
 import TableHead from "./TableHead";
 import TableHeadCell from "./TableHeadCell";
 import TableHeadCellContainer from "./TableHeadCellContainer";
 import TableHeadContainer from "./TableHeadContainer";
-import rowMap from "./rowMap";
 
 export const contextDefaults = {
   Cell,
@@ -21,13 +21,13 @@ export const contextDefaults = {
   RowContainer,
   Table,
   TableContainer,
+  RowMap,
   TableBody,
   TableBodyContainer,
   TableHead,
   TableHeadCell,
   TableHeadCellContainer,
   TableHeadContainer,
-  rowMap,
 }
 
 const TableContext = createContext<Context>(contextDefaults);
