@@ -1,6 +1,6 @@
 # Free Table
 
-Fully customisable react table with the ablity to implement your own data manipulation or ui-representation features.
+Fully customisable react table with the ablity to implement your own data manipulation or ui. You can change anything in representation layer or introduce new data manipulation features without loosing the built-in functionalities.
 
 ## Installation
 
