@@ -1,29 +1,24 @@
 {
-  "name": "free-table-example",
+  "name": "free-table-examples",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.js",
+  "description": "Example use cases of free-table library",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
   "dependencies": {
-    "free-table": "0.1.6",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "3.0.1"
+    "free-table": "0.1.7",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
-    "typescript": "3.8.3"
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+  "keywords": [
+    "javascript",
+    "free-table"
   ]
 }
