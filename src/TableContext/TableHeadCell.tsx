@@ -1,5 +1,5 @@
 import React, { FC } from "react";
 
-const TableHeadCell: FC = ({ children }) => <th>{children}</th>;
+const TableHeadCell: FC = ({ children, ...props }) => <th {...props}>{children}</th>;
 
 export default TableHeadCell;
