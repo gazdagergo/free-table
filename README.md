@@ -32,7 +32,7 @@ export default () => (
 );
 ```
 
-[![Edit gazdagergo/free-table: examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/gazdagergo/free-table/tree/master/examples?initialpath=%2Fbasic&module=%2Fsrc%2Basic.js)
+[![Edit gazdagergo/free-table: examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/gazdagergo/free-table/tree/master/examples?initialpath=%2Fbasic&module=%2Fsrc%2FBasic.js)
 
 
 ## Features
