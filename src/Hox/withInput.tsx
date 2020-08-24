@@ -1,16 +1,16 @@
 import React from 'react'
 import HOC from "../types/HOC";
 
-const withInput:HOC = () => Base => (props) => {
+const withInput:HOC = () => Base => ({ inputValue, onInputChange, children, ...props }) => {
   return (
     <Base
       {...props}
       children={
         <>
-          {props.children}<br />
+          {children}<br />
           <input
-            value={props.inputValue}
-            onChange={props.onInputChange}
+            value={inputValue}
+            onChange={onInputChange}
           />
           <br />
         </>
