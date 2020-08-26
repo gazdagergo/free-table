@@ -5,6 +5,7 @@ interface Context {
   CellContainer?: any; // TODO: find the proper type
   Table?: any;
   Cell?: any;
+  CellMap?: any;
   Row?: any;
   TableHeadContainer?: any;
   TableBodyContainer?: any;

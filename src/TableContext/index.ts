@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import Context from "../types/Context";
 import Cell from "./Cell";
+import CellMap from "./CellMap";
 import CellContainer from "./CellContainer";
 import Row from "./Row";
 import RowContainer from "./RowContainer";
@@ -17,6 +18,7 @@ import TableHeadContainer from "./TableHeadContainer";
 export const contextDefaults = {
   Cell,
   CellContainer,
+  CellMap,
   Row,
   RowContainer,
   Table,
