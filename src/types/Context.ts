@@ -16,7 +16,7 @@ interface Context {
   TableHeadCellContainer?: any;
   TableHeadCell?: any;
   TableHead?: any;
-  columns?: Column[];
+  columns: Column[];
   setFilter?: Function;
   filter?: Filter;
 }

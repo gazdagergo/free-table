@@ -8,7 +8,7 @@ const RowMap:FC<Type> = ({ data }) => {
   return data.map((record:Record) => (
     <RowContainer
       key={record.id}
-      data={record}
+      record={record}
     />
   ))
 }

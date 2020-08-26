@@ -30,6 +30,7 @@ export const contextDefaults = {
   TableHeadCell,
   TableHeadCellContainer,
   TableHeadContainer,
+  columns: []
 }
 
 const TableContext = createContext<Context>(contextDefaults);

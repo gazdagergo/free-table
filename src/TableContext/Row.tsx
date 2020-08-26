@@ -2,12 +2,12 @@ import React, { FC, useContext } from "react";
 import Type from "../types/Row";
 import TableContext from ".";
 
-const Row: FC<Type> = ({ data }) => {
+const Row: FC<Type> = ({ record }) => {
   const { CellMap } = useContext(TableContext);
 
   return (
     <tr>
-      <CellMap data={data} />
+      <CellMap record={record} />
     </tr>
   );
 };

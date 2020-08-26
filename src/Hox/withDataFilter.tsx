@@ -1,12 +1,10 @@
 import React from 'react'
 import HOC from "../types/HOC";
-import Context from "../types/Context";
 import TableContext from "../TableContext";
-
-type FilterRenderFn = (value: Context) => React.ReactNode
+import RenderFnInContext from '../types/RenderFnInContext';
 
 const withDataFilter:HOC = ({ getFilteredData }) => Base => (props) => {
-  const filterRenderFn:FilterRenderFn = ({ filter = {}, columns }) => {
+  const filterRenderFn:RenderFnInContext = ({ filter = {}, columns }) => {
     const filteredData = getFilteredData?.(filter, props.data, columns);
     return <Base {...props} data={filteredData} />;
   }

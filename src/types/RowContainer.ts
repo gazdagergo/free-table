@@ -1,7 +1,7 @@
 import Record from "./Record";
 
 interface RowContainer {
-  data: Record[];
+  record: Record[];
 }
 
 export default RowContainer;

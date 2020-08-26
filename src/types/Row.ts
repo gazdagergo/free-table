@@ -1,7 +1,7 @@
 import Record from "./Record";
 
 interface Row {
-  data: Record[];
+  record: Record[];
 }
 
 export default Row;

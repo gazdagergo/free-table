@@ -9,7 +9,8 @@ const FreeTable:FC<Type> = ({
   ...props
   }) => {
 
-  let nextProps:Context = {}
+  let nextProps:Context = { columns: [] }
+
   if (options) {
     nextProps = options.reverse().reduce((acc, decorator) => {
       return decorator(acc)
@@ -18,7 +19,7 @@ const FreeTable:FC<Type> = ({
 
   const { TableContainer: TableContainerDefault, ...components } = useContext(TableContext);
 
-  const TableContainer =  nextProps?.TableContainer || TableContainerOverride || TableContainerDefault;
+  const TableContainer = nextProps?.TableContainer || TableContainerOverride || TableContainerDefault;
 
   return <TableContainer {...components} {...nextProps} {...props} />
 }

@@ -1,5 +1,5 @@
 interface CellMap {
-  data?: any;
+  record?: any;
 }
 
 export default CellMap;
