@@ -30,7 +30,8 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "bootstrap": "npm run build && rm -rf examples/node_modules/free-table/lib/ && cp -R lib/ examples/node_modules/free-table/lib"
+    "bootstrap": "npm run build && rm -rf examples/node_modules/free-table/lib/ && cp -R lib/ examples/node_modules/free-table/lib",
+    "bootstrap-external": "npm run build && rm -rf examples/node_modules/free-table/lib/ && cp -R lib/"
   },
   "browserslist": [
     ">0.2%",
