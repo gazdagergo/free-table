@@ -9,6 +9,7 @@ export default () => (
       <li><Link to="/basic">Basic</Link></li>
       <li><Link to="/filter">Filter</Link></li>
       <li><Link to="/groups">Groups</Link></li>
+      <li><Link to="/custom-field">Custom Field</Link></li>
     </ul>
   </div>
 )
